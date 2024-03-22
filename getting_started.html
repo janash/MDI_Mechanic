@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting Started &#8212; MDI_Mechanic  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=dffba199" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started';</script>
+    <link rel="icon" href="_static/molssi_square.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Documentation" href="api.html" />
+    <link rel="prev" title="Welcome to MDI_Mechanic’s documentation!" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/molssi_main_logo.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">MolSSI Driver Interface</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="api.html">
+                        API Documentation
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://molssi.org">
+                    MolSSI
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MolSSI/molssi_doc_theme" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="api.html">
+                        API Documentation
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://molssi.org">
+                    MolSSI
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MolSSI/molssi_doc_theme" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Getting Started</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<section id="basic-requirements">
+<h2>Basic Requirements<a class="headerlink" href="#basic-requirements" title="Link to this heading">#</a></h2>
+<p>In order to simplify the process of implementing, testing, and analyzing the capabilities of an MDI engine in a portable environment, this tutorial makes use of several tools. These tools include Git, GitHub, MDI Mechanic, and Docker. Please install each of these tools now:</p>
+<ul>
+<li><p>If you don’t already have a GitHub account, create one now.</p></li>
+<li><p>If you have never used Git, you may wish to work through <a class="reference external" href="https://education.molssi.org/python_scripting_cms/09-version-control/index.html">a quick tutorial on Git</a> on Git, first.</p></li>
+<li><p>Install MDI Mechanic.
+This can be done using <em>pip</em></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>mdimechanic
+</pre></div>
+</div>
+</li>
+<li><p>Install Docker and launch Docker Desktop, if applicable. You don’t need to create a DockerHub account. You also don’t need to know much about using Docker, as MDI Mechanic will handle those details for you.</p></li>
+</ul>
+<p>Note that although the above are requirements of this tutorial, none of them are required of end-users running your code.</p>
+</section>
+<section id="step-1-initialize-an-mdi-report-repository">
+<h2>Step 1: Initialize an MDI report repository<a class="headerlink" href="#step-1-initialize-an-mdi-report-repository" title="Link to this heading">#</a></h2>
+<p>In this step of the tutorial, we will create a new GitHub repository to assist in the process of implementing, testing, and maintaining MDI support in your code. This new repository will be be responsible for storing report generated by MDI Mechanic, which performs tests on the engine under development. Thus it will be separate and independent from any repositories already associated with your code, and will henceforth be referred to as your <strong>report repository</strong>.</p>
+<p>Create your report repository by making a new repository on GitHub. This repository does <strong>NOT</strong> need to include the source code of your engine, so you can make this repository publically accessible even if your source code is maintained privately. Don’t initialize the repository with a <code class="docutils literal notranslate"><span class="pre">README</span></code> file or a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file. You can select whatever license you prefer; since this repository is separate from the repository that holds your engine’s source code, it does not need to be the same license governing your engine’s code.</p>
+<p>Clone the newly created repository onto your local machine</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:&lt;organization&gt;/&lt;repo_name&gt;.git
+<span class="nb">cd</span><span class="w"> </span>&lt;repo_name&gt;
+</pre></div>
+</div>
+<p>Now use MDI Mechanic to create the initial structure for this report repository:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;repo_name&gt;
+mdimechanic<span class="w"> </span>startproject<span class="w"> </span>--enginereport
+</pre></div>
+</div>
+<p>This will add several new files to your report repository, including one called <code class="docutils literal notranslate"><span class="pre">mdimechanic.yml</span></code>.</p>
+</section>
+<section id="step-2-configure-the-mdi-mechanic-yaml-file">
+<h2>Step 2: Configure the MDI Mechanic YAML file<a class="headerlink" href="#step-2-configure-the-mdi-mechanic-yaml-file" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">mdimechanic.yml</span></code> file created in the previous step is used by MDI Mechanic to build your engine and to test and analyze its functionality as an MDI engine. If you have used continuous integration (CI) testing services in the past, you will likely recognize many similarities between <code class="docutils literal notranslate"><span class="pre">mdimechanic.yml</span></code> and the YAML files that are often used by those services. Open <code class="docutils literal notranslate"><span class="pre">mdimechanic.yml</span></code> in your favorite text editor, and you will see that MDI Mechanic pre-populated this file with a basic template.</p>
+<p>This tutorial will go over each field in <code class="docutils literal notranslate"><span class="pre">mdimechanic.yml</span></code> in detail, but the following is a quick summary:</p>
+<ul class="simple">
+<li><p><strong>code_name</strong>: The name of your code, which is used when printing out information. For example, if you are trying to implement MDI support for LAMMPS, you can put <code class="docutils literal notranslate"><span class="pre">code_name</span></code> as “LAMMPS” here.</p></li>
+<li><p><strong>image_name</strong>: MDI Mechanic will create an Docker image (you need to keep the Docker Desktop running at the same time), which will contain a highly portable environment that can be used to reproducibly build and run your engine. This field sets the name of the engine MDI Mechanic will create.</p></li>
+<li><p><strong>build_image</strong>: This provides a script that is used to build the Docker image that MDI Mechanic builds. It corresponds to the steps required to prepare an environment with all of your engine’s dependencies, and is comparable to a <code class="docutils literal notranslate"><span class="pre">before_install</span></code> step in some CI services.</p></li>
+<li><p><strong>build_engine</strong>: This provides a script to build your engine. It is executed within the context of the Docker image built by MDI Mechanic, and is comparable to an <code class="docutils literal notranslate"><span class="pre">install</span></code> step in some CI services.</p></li>
+<li><p><strong>validate_engine</strong>: This provides a script to verify that your engine has been built successfully. It is comparable to a <code class="docutils literal notranslate"><span class="pre">script</span></code> step in some CI services.</p></li>
+<li><p><strong>engine_tests</strong>: This provides scripts used to test MDI functionality in your engine.</p></li>
+</ul>
+<p>For now, just replace the value of <code class="docutils literal notranslate"><span class="pre">code_name</span></code> with the name of your engine, and set the value of <code class="docutils literal notranslate"><span class="pre">image_name</span></code> to something appropriate. The naming convention for Docker images is <code class="docutils literal notranslate"><span class="pre">&lt;organization_name&gt;/&lt;image_name&gt;</span></code>, and we recommend that you follow this convention when setting <code class="docutils literal notranslate"><span class="pre">image_name</span></code>. If in doubt, you can set <code class="docutils literal notranslate"><span class="pre">image_name</span></code> to <code class="docutils literal notranslate"><span class="pre">&lt;engine_name&gt;/mdi_report</span></code>.</p>
+</section>
+<section id="step-3-define-your-engine-s-build-environment-using-mdi-mechanic">
+<h2>Step 3: Define your engine’s build environment using MDI Mechanic<a class="headerlink" href="#step-3-define-your-engine-s-build-environment-using-mdi-mechanic" title="Link to this heading">#</a></h2>
+<p>This tutorial uses MDI Mechanic, which in turn runs your code within the context of a Docker image. In crude terms, you can think of an image as being a simulated duplicate of another computer, which has a different environment from yours (i.e. different installed libraries and system settings), and might be running an entirely different operating system. The image created by MDI Mechanic is based on the Ubunto Linux distribution. Starting from the basic Linux environment, MDI Mechanic installs some basic compilers (gcc, g++, and gfortran), an MPI library (MPICH), Python 3, and a handful of other dependencies (make and openssh) before running script in <code class="docutils literal notranslate"><span class="pre">build_image</span></code>. To finish building the image, MDI Mechanic executes whatever script you’ve provided in the <code class="docutils literal notranslate"><span class="pre">build_image</span></code> section of <code class="docutils literal notranslate"><span class="pre">mdimechanic.yml</span></code>.</p>
+<p>You should now fill out <code class="docutils literal notranslate"><span class="pre">build_image</span></code> with an appropriate script that installs any dependencies necessary to compile your engine (if your engine is written in a compiled language) or to run your engine (if your engine is written in an interpreted language). To do this, imagine that someone handed you a Linux computer that is completely new and unused, except that the compilers and libraries mentioned in the preceeding paragraph have been installed on it. What would you need to do in order to install all the dependencies for your code? The answer to this question corresponds to the script you need to provide to <code class="docutils literal notranslate"><span class="pre">build_image</span></code>.</p>
+</section>
+<section id="step-4-build-your-engine-using-mdi-mechanic">
+<h2>Step 4: Build your engine using MDI Mechanic<a class="headerlink" href="#step-4-build-your-engine-using-mdi-mechanic" title="Link to this heading">#</a></h2>
+<p>After you’ve finished with the <code class="docutils literal notranslate"><span class="pre">build_image</span></code> script, it is time to write the <code class="docutils literal notranslate"><span class="pre">build_engine</span></code> script. This script will be executed within the context of the image you described in the <code class="docutils literal notranslate"><span class="pre">build_image</span></code> script, so it will have access to any dependencies you installed in that script (and only those dependencies). To write the <code class="docutils literal notranslate"><span class="pre">build_engine</span></code> script, ask yourself “What would someone need to type into their terminal to acquire a copy of my code’s source and compile it?”; the answer to this question corresponds to the script you need to provide to <code class="docutils literal notranslate"><span class="pre">build_engine</span></code>. Here are a few important details to keep in mind as you write the <code class="docutils literal notranslate"><span class="pre">build_engine</span> <span class="pre">script</span></code>:</p>
+<ul class="simple">
+<li><p>The initial working directory for the build_engine script is the top-level directory of your report repository.</p></li>
+<li><p>The build_engine script can access and manipulate any files within your report repository, including creating new files and subdirectories. It does not have access to any other files or directories on you filesystem (for Docker afficianados: the report repository’s top-level directory is mounted within the image to /repo).</p></li>
+<li><p>It is recommended that your <code class="docutils literal notranslate"><span class="pre">build_engine</span></code> script should download your engine repository’s source code to a <code class="docutils literal notranslate"><span class="pre">/source</span></code> subdirectory within your report repository.</p></li>
+<li><p>It is recommended that your <code class="docutils literal notranslate"><span class="pre">build_engine</span></code> script should build/install your engine repository’s source code to a <code class="docutils literal notranslate"><span class="pre">/build</span></code> subdirectory within your report repository.</p></li>
+<li><p>If your engine is <strong>NOT</strong> open-source, it may not be possible to simply download the source code via a command like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>. In this case, you should write the <code class="docutils literal notranslate"><span class="pre">build_engine</span></code> script with the assumption that your engine’s source code has been manually copied by the end-user into a <code class="docutils literal notranslate"><span class="pre">source/src</span></code> subdirectory within the report repository’s top-level directory. Uponing cloning the report repository, it will be the responsibility of the user to copy your engine’s source code into the correct location, assuming they have access to it.
+Note that you <strong>absolutely should not</strong> include any private information (i.e. software keys, private ssh keys, private source code, etc.) in <code class="docutils literal notranslate"><span class="pre">mdimechanic.yml</span></code> or any other file that is commited to your report repository. The <code class="docutils literal notranslate"><span class="pre">build</span></code> and <code class="docutils literal notranslate"><span class="pre">source</span></code> directories are included in the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file of the report; this prevents source code that is temporarily stored in those locations from being accidentally committed, unless <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> is overridden. Override <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> at your peril, and always be aware of anything you are committing to the repository.</p></li>
+</ul>
+<p>At this point, you can execute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdimechanic</span> <span class="n">build</span>
+</pre></div>
+</div>
+<p>in the top-level directory of your report repository. If this command executes successfully, great! If not, work to correct any problems with the build process before continuing to the next step.</p>
+</section>
+<section id="step-5-validate-the-engine-build">
+<h2>Step 5: Validate the engine build<a class="headerlink" href="#step-5-validate-the-engine-build" title="Link to this heading">#</a></h2>
+<p>At this point, modify the <code class="docutils literal notranslate"><span class="pre">validate_engine</span></code> field in <code class="docutils literal notranslate"><span class="pre">mdimechanic.yml</span></code> so that it performs a simple test to confirm that the engine was actually built. The script should return a non-zero exit code upon failure. If your code is written in a compiled language, this can be as simple as a check to confirm the existence of the executable file</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">validate_engine</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENGINE_EXECUTABLE_PATH=&quot;build/&lt;engine_exectuable_name&gt;&quot;</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if test -f &quot;$ENGINE_EXECUTABLE_PATH&quot;; then</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;$ENGINE_EXECUTABLE_PATH exists&quot;</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">else</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Could not find engine executable</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$ENGINE_EXECUTABLE_PATH&quot;</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">exit 1</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fi</span>
+</pre></div>
+</div>
+<p>If your code is written in Python, you might instead confim that your code can be imported, i.e.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">validate_engine</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pyton -c &quot;import &lt;engine_name&gt;&quot;</span>
+</pre></div>
+</div>
+<p>After providing a <code class="docutils literal notranslate"><span class="pre">validate_engine</span></code> script, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mdimechanic</span> <span class="n">report</span>
+</pre></div>
+</div>
+<p>in the top-level directory of your MPI-report repository. This will perform a series of tests to confirm whether your engine supports MDI correctly. The first of these tests simply runs the <code class="docutils literal notranslate"><span class="pre">validate_engine</span></code> script. Since we haven’t even started implementing MDI functionality in your engine yet, it is expected that MDI Mechanic will report errors shortly after starting. After <code class="docutils literal notranslate"><span class="pre">mdimechanic</span> <span class="pre">report</span></code> stops (most likely throwing an error), you should find that there is a new <code class="docutils literal notranslate"><span class="pre">README</span></code>.md file in your MDI-report repository. This file contains the full report from MDI Mechanic. To properly view the file, you can either commit the file and push it to GitHub, where it can be viewed at your MDI-report repository’s GitHub page, or you can install an offline markdown viewer (such as <code class="docutils literal notranslate"><span class="pre">grip</span></code>) to view it. There isn’t much to see now, but hopefully you can see that there is a green <code class="docutils literal notranslate"><span class="pre">working</span></code> badge next to the step labeled “The engine builds successfully”. If not, review the error messages from <code class="docutils literal notranslate"><span class="pre">mdimechanic</span> <span class="pre">report</span></code> to try to work out what when wrong, before moving on to the next step.</p>
+</section>
+<section id="step-6-provide-an-example-input">
+<h2>Step 6: Provide an example input<a class="headerlink" href="#step-6-provide-an-example-input" title="Link to this heading">#</a></h2>
+<p>When you run <code class="docutils literal notranslate"><span class="pre">mdimechanic</span> <span class="pre">report</span></code>, MDI Mechanic tries to run a series of tests to determine whether and to what extent your code supports MDI. To do this, MDI Mechanic attempts to launch your code, establish a connection between it and numerous test drivers, and then report the results. At this point in the tutorial, MDI Mechanic has no information about how to launch your code, so it can’t run these tests.</p>
+<p>We will now supply MDI Mechanic with everything it needs to run a calculation using your code. In <code class="docutils literal notranslate"><span class="pre">mdimechanic.yml</span></code> you will find an <code class="docutils literal notranslate"><span class="pre">engine_tests</span></code> field. This field can contain a list of scripts, each of which is intended to launch a single calculation with your code. For now, we only want to supply a single test script. The relevant part of <code class="docutils literal notranslate"><span class="pre">mdimechanic.yml</span></code> reads:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">engine_tests</span><span class="p">:</span>
+<span class="c1"># Provide at least one example input that can be used to test your code&#39;s MDI functionality</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Insert commands to run an example calculation here&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exit 1</span>
+</pre></div>
+</div>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">script</span></code> in the script field here so that, when executed, it will launch a calculation using your code. This likely means that you will need to add one or more input files to your MDI-report repository, which we recommend placing in a <code class="docutils literal notranslate"><span class="pre">tests</span></code> subdirectory. Your <code class="docutils literal notranslate"><span class="pre">mdimechanic.yml</span></code> might end up looking something like this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">engine_tests</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd tests/test1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../../${ENGINE_EXECUTABLE_PATH} -in test.inp</span>
+</pre></div>
+</div>
+<p>The exact nature of the test calculation doesn’t matter very much. It should be a short calculation, since it will be run many times. The calculation might involve a simulation of a Lennard-Jones fluid, evaluation of the single-point energy of a water molecule, or some other small computatation. The most important thing about the test script is that <em>it must return a **non-zero*</em> exit value if your engine exits due to an error*.</p>
+<p>At this point, you have successfully set up MDI Mechanic for testing under development engine. The rest steps will require you to provide support for MDI in your code and using MDI Mechanic as an automated testing tool to make sure you are on the right track.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to MDI_Mechanic’s documentation!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="api.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-requirements">Basic Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-initialize-an-mdi-report-repository">Step 1: Initialize an MDI report repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-configure-the-mdi-mechanic-yaml-file">Step 2: Configure the MDI Mechanic YAML file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-define-your-engine-s-build-environment-using-mdi-mechanic">Step 3: Define your engine’s build environment using MDI Mechanic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-build-your-engine-using-mdi-mechanic">Step 4: Build your engine using MDI Mechanic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-validate-the-engine-build">Step 5: Validate the engine build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-provide-an-example-input">Step 6: Provide an example input</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/getting_started.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+        <p class="sphinx-version">
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6.<br>
+        </p>
+        
+
+        <p class="theme-version">
+        Built with a customized <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+        </p>
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>
