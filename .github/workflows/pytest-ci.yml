@@ -41,6 +41,4 @@ jobs:
     
     - name: Run pytest
       run: |
-        alias docker=''
-        alias docker-compose=''
         pytest -v --cov=mdimechanic
