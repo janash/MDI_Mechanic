@@ -40,5 +40,6 @@ jobs:
         pip install pytest-mock
     
     - name: Run pytest
+      shell: bash
       run: |
         make test
