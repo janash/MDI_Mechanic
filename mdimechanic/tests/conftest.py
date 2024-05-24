@@ -19,7 +19,7 @@ def mock_get_mdimechanic_yaml(mocker):
     """Fixture to mock get_mdimechanic_yaml function"""
     return mocker.patch('mdimechanic.utils.utils.get_mdimechanic_yaml', return_value={'docker': {'image_name': 'test_image'}})
 
-@pytest.fixture
+@pytest.fixture(autouse=True)
 def mock_determine_compose_command(mocker):
     """Fixture to mock get_compose_command function"""
     return mocker.patch('mdimechanic.utils.determine_compose.determine_compose', return_value='docker compose')

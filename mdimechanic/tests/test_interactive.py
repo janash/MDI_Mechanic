@@ -4,7 +4,7 @@ from unittest.mock import patch
 from mdimechanic.cmd_interactive import start
 
 
-def test_start_linux_gitconfig_exists(setup_temp_files, tmp_path, mocker, mock_get_mdimechanic_yaml, mock_determine_compose_command):
+def test_start_linux_gitconfig_exists(setup_temp_files, tmp_path, mocker, mock_get_mdimechanic_yaml):
     temp_gitconfig, temp_ssh = setup_temp_files
 
     # Patch os.path.expanduser to use tmp_path
@@ -21,7 +21,7 @@ def test_start_linux_gitconfig_exists(setup_temp_files, tmp_path, mocker, mock_g
     assert f"{temp_gitconfig}:/root/.gitconfig" in run_command
     assert f"{temp_ssh}:/root/.ssh" in run_command
 
-def test_start_windows_gitconfig_exists(tmp_path, mocker, mock_get_mdimechanic_yaml, mock_determine_compose_command):
+def test_start_windows_gitconfig_exists(tmp_path, mocker, mock_get_mdimechanic_yaml):
     temp_userprofile = tmp_path / 'TestUserProfile'
     temp_userprofile.mkdir()
     temp_gitconfig = temp_userprofile / '.gitconfig'
@@ -44,7 +44,7 @@ def test_start_windows_gitconfig_exists(tmp_path, mocker, mock_get_mdimechanic_y
         assert f"{temp_gitconfig}:/root/.gitconfig" in run_command
         assert f"{temp_ssh}:/root/.ssh" in run_command
 
-def test_start_no_gitconfig(setup_temp_files, tmp_path, mocker, mock_get_mdimechanic_yaml, mock_determine_compose_command):
+def test_start_no_gitconfig(setup_temp_files, tmp_path, mocker, mock_get_mdimechanic_yaml):
     _, temp_ssh = setup_temp_files
 
     # Patch os.path.expanduser to use tmp_path
