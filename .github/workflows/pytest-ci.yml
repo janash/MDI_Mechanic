@@ -45,7 +45,7 @@ jobs:
         make test
     
     - name: Run pytest (windows)
-      runs-on: windows-latest
+      runs-on: [windows-latest]
       run: |
         set TESTING=true
         pytest -v
