@@ -4,9 +4,9 @@ Fixtures for the mdimechanic tests.
 
 import pytest
 
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, patch"
 
-@pytest.fixture(autouse=True)
+@pytest.fixture(scope="session", autouse=True)
 def mock_subprocess_run():
     with patch('subprocess.run') as mock_run:
         mock_run.side_effect = [
