@@ -41,4 +41,5 @@ jobs:
     
     - name: Run pytest
       run: |
+        export TESTING="true"
         pytest -v --cov=mdimechanic
