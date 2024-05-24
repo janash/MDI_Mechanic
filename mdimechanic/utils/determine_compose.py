@@ -5,6 +5,9 @@ Determine the Docker Compose command to use.
 import subprocess
 
 
+import logging
+
+
 def determine_compose():
     """
     Determine the compose command to use
@@ -18,7 +21,7 @@ def determine_compose():
             check=True,
         )
         return ["docker", "compose"]
-    except subprocess.CalledProcessError:
+    except (subprocess.CalledProcessError, FileNotFoundError):
         try:
             subprocess.run(
                 ["docker-compose", "version"],
@@ -27,8 +30,7 @@ def determine_compose():
                 check=True,
             )
             return ["docker-compose"]
-        except subprocess.CalledProcessError:
-            raise Exception("Error: Unable to find docker-compose or docker compose.")
-
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            logging.warning("Unable to find docker-compose or docker compose.")
 
 COMPOSE_COMMAND = determine_compose()

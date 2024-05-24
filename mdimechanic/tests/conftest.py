@@ -4,19 +4,6 @@ Fixtures for the mdimechanic tests.
 
 import pytest
 
-from unittest.mock import MagicMock, patch"
-
-@pytest.fixture(scope="session", autouse=True)
-def mock_subprocess_run():
-    with patch('subprocess.run') as mock_run:
-        mock_run.side_effect = [
-            # Simulate docker compose version success
-            MagicMock(returncode=0),
-            # Simulate docker-compose version success if needed
-            MagicMock(returncode=0)
-        ]
-        yield mock_run
-
 @pytest.fixture
 def setup_temp_files(tmp_path):
     """Fixture to set up temporary .gitconfig and .ssh directories"""
