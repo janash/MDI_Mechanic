@@ -39,7 +39,13 @@ jobs:
         pip install pytest-cov
         pip install pytest-mock
     
-    - name: Run pytest
-      shell: bash
+    - name: Run pytest (ubuntu and macOS)
+      runs-on: [ubuntu-latest, macOS-latest]
       run: |
         make test
+    
+    - name: Run pytest (windows)
+      runs-on: windows-latest
+      run: |
+        set TESTING=true
+        pytest -v
