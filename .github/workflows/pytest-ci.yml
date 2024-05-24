@@ -28,9 +28,6 @@ jobs:
         df -h
         ulimit -a
     
-    - name: setup-docker
-      uses: docker-practice/actions-setup-docker@v1
-            
     - name: Set up Python '${{ matrix.python-version }}'
       uses: actions/setup-python@v2
       with:
@@ -44,4 +41,6 @@ jobs:
     
     - name: Run pytest
       run: |
+        alias docker=''
+        alias docker-compose=''
         pytest -v --cov=mdimechanic
