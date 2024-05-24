@@ -42,7 +42,8 @@ jobs:
     - name: Run pytest (ubuntu and macOS)
       if: runner.os != 'Windows'
       run: |
-        make test
+        export TESTING=true
+        pytest -v --cov=mdimechanic --cov-report=xml
     
     - name: Run pytest (windows)
       if: runner.os == 'Windows'
