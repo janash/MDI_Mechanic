@@ -1,24 +1,10 @@
 
-import pytest
+
 from unittest.mock import patch
 from mdimechanic.cmd_interactive import start
 
-@pytest.fixture
-def setup_temp_files(tmp_path):
-    """Fixture to set up temporary .gitconfig and .ssh directories"""
-    temp_gitconfig = tmp_path / '.gitconfig'
-    temp_ssh = tmp_path / '.ssh'
-    temp_ssh.mkdir()
-    temp_gitconfig.write_text('')
 
-    return temp_gitconfig, temp_ssh
-
-@pytest.fixture
-def mock_get_mdimechanic_yaml(mocker):
-    """Fixture to mock get_mdimechanic_yaml function"""
-    return mocker.patch('mdimechanic.utils.utils.get_mdimechanic_yaml', return_value={'docker': {'image_name': 'test_image'}})
-
-def test_start_linux_gitconfig_exists(setup_temp_files, tmp_path, mocker, mock_get_mdimechanic_yaml):
+def test_start_linux_gitconfig_exists(setup_temp_files, tmp_path, mocker, mock_get_mdimechanic_yaml, mock_determine_compose_command):
     temp_gitconfig, temp_ssh = setup_temp_files
 
     # Patch os.path.expanduser to use tmp_path
@@ -35,7 +21,7 @@ def test_start_linux_gitconfig_exists(setup_temp_files, tmp_path, mocker, mock_g
     assert f"{temp_gitconfig}:/root/.gitconfig" in run_command
     assert f"{temp_ssh}:/root/.ssh" in run_command
 
-def test_start_windows_gitconfig_exists(tmp_path, mocker, mock_get_mdimechanic_yaml):
+def test_start_windows_gitconfig_exists(tmp_path, mocker, mock_get_mdimechanic_yaml, mock_determine_compose_command):
     temp_userprofile = tmp_path / 'TestUserProfile'
     temp_userprofile.mkdir()
     temp_gitconfig = temp_userprofile / '.gitconfig'
@@ -58,7 +44,7 @@ def test_start_windows_gitconfig_exists(tmp_path, mocker, mock_get_mdimechanic_y
         assert f"{temp_gitconfig}:/root/.gitconfig" in run_command
         assert f"{temp_ssh}:/root/.ssh" in run_command
 
-def test_start_no_gitconfig(setup_temp_files, tmp_path, mocker, mock_get_mdimechanic_yaml):
+def test_start_no_gitconfig(setup_temp_files, tmp_path, mocker, mock_get_mdimechanic_yaml, mock_determine_compose_command):
     _, temp_ssh = setup_temp_files
 
     # Patch os.path.expanduser to use tmp_path
